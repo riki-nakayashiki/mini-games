@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Hangman</title>
         <link rel="stylesheet" href="../style/hangman.css" />
         <link rel="stylesheet" href="../style/general.css" />
+        <link rel="stylesheet" href="../style/timer.css" />
     </head>
     <body>
         <section class="hangman">
@@ -13,8 +14,7 @@
                 <div>Hangman : Song Name</div>
             </div>
             <section class="top-part">
-                <section id="answer-section">
-                </section>
+                <section id="answer-section"></section>
                 <section class="hint-section">
                     <button id="hint">Hint</button>
                     <div id="hint-text" hidden></div>
@@ -23,25 +23,31 @@
 
             <section class="middle-part">
                 <section class="life-count">
-                    <p>
-                        Lives left:
-                    </p>
+                    <p>Lives left:</p>
                     <div id="lives-left"></div>
+                    <div class="timer">
+                        <div id="timerNumber">10</div>
+                        <div class="groupButtons">
+                            <button id="startButton" class="startButtonStyle">
+                                Start
+                            </button>
+                            <button id="stopButton">Stop</button>
+                            <button id="resetButton">Reset</button>
+                        </div>
+                    </div>
                 </section>
                 <section class="alphabets">
-                    <p>
-                        Click alphabets below to guess the word.
-                    </p>
-                    <div id="letters">
-                    </div>
+                    <p>Click alphabets below to guess the word.</p>
+                    <div id="letters"></div>
                 </section>
             </section>
             <section class="bottom-part">
                 <button id="next-btn">Next</button>
             </section>
         </section>
-        <footer>
-        </footer>
+
+        <footer></footer>
         <script src="../js/hangman.js"></script>
+        <script src="../js/timer.js"></script>
     </body>
 </html>
