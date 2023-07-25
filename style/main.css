@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2%;
+    border-bottom: 3px solid black;
+}
+
+#login-btn {
+    width: 10vw;
+}
+
+#login-btn>a {
+    color: white;
+    font-size: 24px;
+}
+
+main {
+    height: 80vh;
+}
+
+#default-msg {
+    height: 100%;
+    text-align: center;
+    font-size: 50px;
+}
+
+#mini-games {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+figure {
+    transition: .6s;
+}
+
+figure:hover {
+    scale: 1.1;
+}
+
+img {
+    width: 30vw;
+    height: 30vw;
+    object-fit: contain;
+}
+
+a {
+    text-align: center;
+    text-decoration: none;
+    color: black;
+}
