@@ -95,7 +95,6 @@ function getIdName(div,number) {
     div.style.height = height_Percentage + '%';
     div.style.width = number * height_Percentage + '%';
     div.style.margin = '0px auto';
-    div.style.background = 'white';
 }
 
 function singleGame() {

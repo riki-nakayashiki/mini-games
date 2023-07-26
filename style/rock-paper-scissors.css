@@ -10,8 +10,6 @@ html {
 
 .rock-paper-scissors {
     font-family: 'Ubuntu',sans-serif;
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
     text-align: center;
 }
 
@@ -68,3 +66,6 @@ select {
     margin:5px auto;
 }
 
+.layer{
+    background-image: url('../img/layer.png');
+}
