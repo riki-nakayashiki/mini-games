@@ -38,6 +38,13 @@ let letterBtns = document.getElementById('letters');
 // Variables
 let countQuiz = 0;
 let hintText;
+let countGuess;
+
+document.getElementById('start-btn').addEventListener('click', () => {
+    document.getElementById('start-screen').hidden = true;
+    document.getElementById('hangman').hidden = false;
+    start();
+})
 
 // Create the first quiz and alphabet buttons
 document.addEventListener('DOMContentLoaded', () => {
@@ -54,6 +61,10 @@ hintBtn.addEventListener('click', () => {
 
 // Next Button
 nextBtn.addEventListener('click', () => {
+    // Reset Timer
+    reset();
+    start();
+
     // Reset Quiz
     if (countQuiz == dataset.length - 1) {
         // When user completes all quizes
@@ -97,10 +108,14 @@ function setQuiz(num) {
 
 function livesIndicate() {
     livesCount.innerHTML = countGuess;
-    if (countGuess <= 0) {
+    if (
+        (countGuess <= 0) ||
+        (parseInt(document.getElementById("timerNumber").innerHTML) == 0)
+    ) {
         answerSec.innerHTML = answerText;
         livesCount.innerHTML = 'You Lost!';
         closeAlphabets();
+        stop();
     }
 }
 

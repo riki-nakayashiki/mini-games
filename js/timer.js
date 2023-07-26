@@ -25,5 +25,6 @@ function timer() {
     document.getElementById("timerNumber").innerHTML = timer;
     if (timer == 0) {
         stop();
+        livesIndicate();
     }
 }

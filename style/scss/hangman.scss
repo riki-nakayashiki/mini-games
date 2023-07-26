@@ -1,8 +1,27 @@
-.hangman {
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#hangman {
     display: flex;
     flex-direction: column;
     row-gap: 3vh;
+}
 
+#start-screen {
+    display: flex;
+    height: 80vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    button {
+        height: 60vh;
+        width: 60vw;
+        font-size: 90px;
+        border-radius: 20px;
+    }
 }
 
 .top-part,
@@ -63,13 +82,23 @@
 .life-count {
     display: flex;
     flex-direction: column;
+    row-gap: 2vh;
     align-items: center;
+    text-align: center;
     width: 30%;
-    font-size: 20px;
+
+    span {
+        width: 80%;
+        border-bottom: 1px solid black;
+    }
+
+    p,
+    #timerNumber {
+        font-size: 40px;
+    }
 }
 
-#lives-left {
-    text-align: center;
+.life {
     font-size: 40px;
 }
 
