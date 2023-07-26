@@ -1,7 +1,26 @@
-.hangman {
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#hangman {
   display: flex;
   flex-direction: column;
   row-gap: 3vh;
+}
+
+#start-screen {
+  display: flex;
+  height: 80vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#start-screen button {
+  height: 60vh;
+  width: 60vw;
+  font-size: 90px;
+  border-radius: 20px;
 }
 
 .top-part,
@@ -59,13 +78,21 @@
 .life-count {
   display: flex;
   flex-direction: column;
+  row-gap: 2vh;
   align-items: center;
+  text-align: center;
   width: 30%;
-  font-size: 20px;
+}
+.life-count span {
+  width: 80%;
+  border-bottom: 1px solid black;
+}
+.life-count p,
+.life-count #timerNumber {
+  font-size: 40px;
 }
 
-#lives-left {
-  text-align: center;
+.life {
   font-size: 40px;
 }
 
@@ -82,40 +109,3 @@
 #next-btn {
   font-size: 30px;
 }/*# sourceMappingURL=hangman.css.map */
-
-
-.timer{
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-items: center;
-  padding: 64px 0;
-
-}
-
-.groupButtons{
-  display: flex;
-  flex-wrap: wrap;
-}
-
-button {
-  border-radius: 4px;
-  border: 1px solid rgb(152, 152, 152);
-  width: 120px;
-  height: 60px;
-  margin: 10px;
-  background: transparent;
-  color: black;
-  font-size: 20px;
-  cursor: pointer;
-}
-
-.startButtonStyle:disabled{
-  opacity: 50%;
-  cursor: default;
-}
-
-#timerNumber {
-  color: black;
-  font-size: 32px;
-}
