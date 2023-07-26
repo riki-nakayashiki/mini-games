@@ -1,4 +1,4 @@
-var loginInfo = [{email : 'rriki@gamil.com', password : '1234'},
+var loginInfo = [{email : 'rriki@gmail.com', password : '1234'},
                  {email : 'alice@gmail.com', password : '2345'},
                  {email : 'soobeom@gmail.com', password : '3456'}]
 
@@ -19,7 +19,7 @@ document.getElementById('login-btn').addEventListener('click',function(e){
         let loginIndex = loginInfo.findIndex(e => e.email == emailInput)
         if (loginIndex >= 0){
             if (loginInfo[loginIndex].password == passwordInput){
-                document.getElementsByClassName('loginForm')[0].innerHTML='<p style="background-color: rgb(119,134,153); font-size:30px;">😊Success!</p>';
+                location.href = 'miniGames.html'
             }
             else {
                 alert("Wrong Passwords.");
