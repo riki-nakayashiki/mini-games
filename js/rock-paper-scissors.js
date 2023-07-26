@@ -28,8 +28,8 @@ function initGame(){
     //Reset the layer
     resetLayer();
 
-    player1_pick_show("url('../imgs/no.png')");
-    player2_pick_show("url('../imgs/no.png')");
+    player1_pick_show("url('../img/no.png')");
+    player2_pick_show("url('../img/no.png')");
 
     //Set the circle on the bottom layer
     getLeftCircle();
@@ -220,27 +220,27 @@ function dualGame(){
             switch(event.code){
                 case ("KeyA"):
                     player1_pick = "rock";
-                    player1_pick_show("url('../imgs/okay.png')");
+                    player1_pick_show("url('../img/okay.png')");
                     break;
                 case ('KeyS'):
                     player1_pick = "paper";
-                    player1_pick_show("url('../imgs/okay.png')");
+                    player1_pick_show("url('../img/okay.png')");
                     break;
                 case('KeyD'):
                     player1_pick = "scissors";
-                    player1_pick_show("url('../imgs/okay.png')");
+                    player1_pick_show("url('../img/okay.png')");
                     break;
                 case ('KeyJ'):
                     player2_pick = "rock";
-                    player2_pick_show("url('../imgs/okay.png')");
+                    player2_pick_show("url('../img/okay.png')");
                     break;
                 case ('KeyK'):
                     player2_pick = "paper";
-                    player2_pick_show("url('../imgs/okay.png')");
+                    player2_pick_show("url('../img/okay.png')");
                     break;
                 case('KeyL'):
                     player2_pick = "scissors";
-                    player2_pick_show("url('../imgs/okay.png')");
+                    player2_pick_show("url('../img/okay.png')");
                     break;
                 case('Enter'):
                     playGame();
@@ -327,16 +327,16 @@ function player2_pick_show(url){
 
 function select_pick_img(player_picks){
     if (player_picks == 'rock'){
-        return "url(../imgs/rock.png)"
+        return "url(../img/rock.png)"
     }
     else if (player_picks == 'paper'){
-        return "url(../imgs/paper.png)"
+        return "url(../img/paper.png)"
     }
     else if (player_picks == 'scissors'){
-        return "url(../imgs/scissors.png)"
+        return "url(../img/scissors.png)"
     }
     else {
-        return "url(../imgs/no.png)"
+        return "url(../img/no.png)"
     }
 }
 
