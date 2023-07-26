@@ -125,6 +125,7 @@ function clickAlphabet() {
     for (let i = 0; i < answerText.length; i++) {
         if (answerText[i].toLowerCase() == this.innerHTML) {
             guessedText = guessedText.slice(0, i) + answerText[i] + guessedText.slice(i + 1);
+            console.log(guessedText);
             answerSec.innerHTML = guessedText;
             isCorrect = true;
         }
