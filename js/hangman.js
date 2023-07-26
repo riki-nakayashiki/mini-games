@@ -151,8 +151,9 @@ function checkResult(isWin) {
     if (isWin) {
         // When User Win
         if (!guessedText.includes('_')) {
-            livesCount.innerHTML = 'Congrats! <br> You Won!';
+            livesCount.innerHTML = 'Congrats! You Won!';
             closeAlphabets();
+            stop();
         }
     } else {
         countGuess--;
