@@ -1,0 +1,121 @@
+.hangman {
+  display: flex;
+  flex-direction: column;
+  row-gap: 3vh;
+}
+
+.top-part,
+.bottom-part {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 3vh;
+}
+
+.subnav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color: aliceblue;
+  padding: 3px 0;
+  gap: 10px;
+}
+
+.hint-section {
+  font-size: 30px;
+  height: 8vh;
+}
+.hint-section button {
+  font-size: 30px;
+}
+
+#letters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2vh;
+}
+#letters button {
+  width: 10%;
+  background-color: skyblue;
+  border-radius: 5px;
+}
+#letters .clicked {
+  background-color: grey;
+}
+
+#answer-section {
+  height: 10vh;
+  font-size: 8vh;
+  letter-spacing: 3vw;
+}
+
+.middle-part {
+  display: flex;
+  flex-direction: row;
+  column-gap: 3vw;
+}
+
+.life-count {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30%;
+  font-size: 20px;
+}
+
+#lives-left {
+  text-align: center;
+  font-size: 40px;
+}
+
+.alphabets {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
+}
+.alphabets p {
+  font-size: 20px;
+}
+
+#next-btn {
+  font-size: 30px;
+}/*# sourceMappingURL=hangman.css.map */
+
+
+.timer{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 64px 0;
+
+}
+
+.groupButtons{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+button {
+  border-radius: 4px;
+  border: 1px solid rgb(152, 152, 152);
+  width: 120px;
+  height: 60px;
+  margin: 10px;
+  background: transparent;
+  color: black;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.startButtonStyle:disabled{
+  opacity: 50%;
+  cursor: default;
+}
+
+#timerNumber {
+  color: black;
+  font-size: 32px;
+}
