@@ -1,4 +1,4 @@
-let dataset = [
+const dataset = [
     {
         "Category": "Song",
         "Name": "Let it be",
@@ -24,8 +24,9 @@ let dataset = [
         "Name": "Gangnam Style",
         "Hint": "PSY"
     }
-];
-let alphabets = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+]; ///Constant Variables
+
+const alphabets = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']; ///Arrays
 
 // Get Elements
 let nextBtn = document.getElementById('next-btn');
@@ -40,7 +41,8 @@ let countQuiz = 0;
 let hintText;
 let countGuess;
 
-document.getElementById('start-btn').addEventListener('click', () => {
+// Start button
+document.getElementById('start-btn').addEventListener('click', () => { ///Anonymous Function
     document.getElementById('start-screen').hidden = true;
     document.getElementById('hangman').hidden = false;
     start();
@@ -53,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 // Hint Button
-hintBtn.addEventListener('click', () => {
+hintBtn.addEventListener('click', () => { ///Input-Output
     hintDiv.innerHTML = hintText;
     hintBtn.hidden = true;
     hintDiv.hidden = false;
@@ -66,19 +68,19 @@ nextBtn.addEventListener('click', () => {
     start();
 
     // Reset Quiz
-    if (countQuiz == dataset.length - 1) {
+    if (countQuiz == dataset.length - 1) { ///Evaluation / Comparison Operators
         // When user completes all quizes
         closeAlphabets();
         answerSec.style.fontSize = '25px'
         answerSec.style.letterSpacing = '1vw'
         answerSec.innerHTML = 'Complete all Quizes!';
     } else {
-        countQuiz++;
+        countQuiz++; ///Arithmetic Operators
         setQuiz(countQuiz);
 
         // Reset alphabets
-        while (letterBtns.firstChild) {
-            letterBtns.removeChild(letterBtns.firstChild);
+        while (letterBtns.firstChild) { ///While Loop
+            letterBtns.removeChild(letterBtns.firstChild); ///Built-in Functions?
         }
         placeAlphabets();
     }
@@ -89,16 +91,16 @@ nextBtn.addEventListener('click', () => {
     hintDiv.hidden = true;
 })
 
-function setQuiz(num) {
+function setQuiz(num) { ///Named Functions
     countGuess = 5;
     livesIndicate();
     answerText = dataset[num].Name;
     guessedText = '';
-    for (let i = 0; i < answerText.length; i++) {
-        if (answerText[i] == ' ') {
+    for (let i = 0; i < answerText.length; i++) { ///For Loop
+        if (answerText[i] == ' ') { ///Conditional Statement
             guessedText += ' ';
         } else {
-            guessedText += '_';
+            guessedText += '_'; ///Assignment Operators
         }
     }
     answerSec.innerHTML = guessedText;
@@ -106,10 +108,10 @@ function setQuiz(num) {
     hintText = dataset[num].Hint;
 }
 
-function livesIndicate() {
+function livesIndicate() { ///Named Functions
     livesCount.innerHTML = countGuess;
     if (
-        (countGuess <= 0) ||
+        (countGuess <= 0) || ///Logical Operators
         (parseInt(document.getElementById("timerNumber").innerHTML) == 0)
     ) {
         answerSec.innerHTML = answerText;
@@ -119,14 +121,14 @@ function livesIndicate() {
     }
 }
 
-function placeAlphabets() {
+function placeAlphabets() { ///Named Functions
     for (var i = 0; i < alphabets.length; i++) {
-        let letterButton = document.createElement('button');
+        let letterButton = document.createElement('button'); ///Limited Scope Variables
         letterButton.style.fontSize = '20px';
         letterButton.innerHTML = alphabets[i];
 
         // Set onlick property
-        letterButton.onclick = clickAlphabet;
+        letterButton.onclick = clickAlphabet; ///Built-in Methods?
 
         letterBtns.appendChild(letterButton);
     }
@@ -137,7 +139,7 @@ function clickAlphabet() {
     this.setAttribute("class", "clicked");
 
     let isCorrect = false;
-    for (let i = 0; i < answerText.length; i++) {
+    for (let i = 0; i < answerText.length; i++) { ///String Manipulation
         if (answerText[i].toLowerCase() == this.innerHTML) {
             guessedText = guessedText.slice(0, i) + answerText[i] + guessedText.slice(i + 1);
             answerSec.innerHTML = guessedText;
@@ -169,4 +171,6 @@ function closeAlphabets() {
     }
 }
 
-
+///Return Statement
+///Built-in Class
+///Constructor
