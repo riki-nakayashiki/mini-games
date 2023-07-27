@@ -20,7 +20,7 @@ function reset() {
 }
 function timer() {
     let timer = document.getElementById("timerNumber").innerHTML;
-    timer = parseInt(timer);
+    timer = parseInt(timer); ///Built-in Functions
     timer--;
     document.getElementById("timerNumber").innerHTML = timer;
     if (timer == 0) {

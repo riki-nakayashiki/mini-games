@@ -196,7 +196,7 @@ function get_circle_loc(score){///Named Functions
     let number = totalNumber - score;
     switch(number){
         case (1):
-            return 'first'
+            return 'first' ///Return Statement
         case (2):
             return 'second'
         case (3):
