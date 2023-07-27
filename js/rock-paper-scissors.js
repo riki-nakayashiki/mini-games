@@ -6,7 +6,7 @@ var player1_pick;
 var player2_pick;
 
 //Initialization Game (game-content)
-function initGame(){
+function initGame(){///Named Functions
     let numberOfPlayer = document.querySelector('input[name="numberOfPlayer"]:checked').value; //Limited Scope Variables for check the number of player.
     document.getElementsByClassName('playgame')[0].style.display = 'none';
     if (numberOfPlayer == 'single'){
@@ -37,15 +37,15 @@ function initGame(){
 
 }
 
-function resetLayer(){
+function resetLayer(){///Named Functions
     let parent = document.getElementById('game-content');
     let gameCountSeletor = document.getElementById('gameCount');
     //If there are some layer divs, Delete everything.
-    while (parent.hasChildNodes()) {
+    while (parent.hasChildNodes()) {///While Loop
         parent.removeChild(parent.firstChild);
     }
     totalNumber = parseInt(gameCountSeletor.options[gameCountSeletor.selectedIndex].value) + 1;//gameCount + 1 (last top div)
-    for (let i = 1; i <= totalNumber; i++){
+    for (let i = 1; i <= totalNumber; i++){///For Loop
         let div = document.createElement('div');
         getIdName(div,i);
         parent.appendChild(div);
@@ -53,7 +53,7 @@ function resetLayer(){
 }
 
 //get layer divs's id and class & styling layer divs
-function getIdName(div,number) {
+function getIdName(div,number) {///Named Functions
     switch (number) {
         case(1):
             div.id = "first"
@@ -97,11 +97,11 @@ function getIdName(div,number) {
     div.style.margin = '0px auto';
 }
 
-function singleGame() {
+function singleGame() {///Named Functions
     //Making exmplanation.
     let parent = document.getElementById('explanation');
     parent.style.marginTop = '15px';
-    parent.style.marginBottom = '20px';
+    parent.style.marginBottom = '150px';
     while (parent.hasChildNodes()) {
         parent.removeChild(parent.firstChild);
     }
@@ -121,7 +121,7 @@ function singleGame() {
 }
 
 //Styling choiceBtn.
-function choiceBtn_set(button){
+function choiceBtn_set(button){///Named Functions
     button.style.width = '150px';
     button.style.height = '50px';
     button.innerHTML = button.id;
@@ -134,9 +134,9 @@ function choiceBtn_set(button){
     });
 }
 
-function computerPick(){
-    let random = Math.floor(Math.random()*(3-1)+1);
-    if(random == 1){
+function computerPick(){///Named Functions
+    let random = Math.floor(Math.random()*(3-1)+1);///Built-in method
+    if(random == 1){///Logical Operators
         player2_pick = 'rock';
     }
     else if(random == 2){
@@ -147,51 +147,52 @@ function computerPick(){
     } 
 }
 
-function getLeftCircle(){
+function getLeftCircle(){///Named Functions
     let layer = get_circle_loc(player1_score);
     let div = document.querySelector('#'+layer);
     let circle = document.createElement('div');
     circle.className = 'leftCircle';
-    circle.style.borderRadius = '70%';
-    circle.style.width = '50px';
-    circle.style.height = '50px';
+    circle.style.width = '100px';
+    circle.style.height = '150px';
+    circle.style.backgroundImage = "url('../img/player1.png')";
+    circle.style.backgroundSize = 'cover'
     circle.style.position = 'absolute';
     circle.style.left = div.offsetLeft + 10 + 'px';
     circle.style.top = div.offsetTop - parseInt(circle.style.height) + 'px';
     if (player1_score >= totalNumber-1){
-        circle.style.width = '100px';
-        circle.style.height = '100px';
-        circle.style.left = circle.style.left = div.offsetLeft + parseInt(div.offsetWidth)/2 - 50 + 'px';
-        circle.style.top = div.offsetTop - parseInt(circle.style.height) + 'px';;
+        circle.style.width = '150px';
+        circle.style.height = '200px';
+        circle.style.backgroundImage = "url('../img/player1Win.png')";
+        circle.style.left = circle.style.left = div.offsetLeft + parseInt(div.offsetWidth)/2 - parseInt(circle.style.width)/2 + 'px';
+        circle.style.top = div.offsetTop - parseInt(circle.style.height) -10 + 'px';;
     }
-    circle.style.backgroundColor = 'black';
     document.getElementById('game-content').appendChild(circle);
 }
 
-function getRightCircle(){
+function getRightCircle(){///Named Functions
     let layer = get_circle_loc(player2_score);
     let div = document.querySelector('#'+layer);
-    let location = div.getBoundingClientRect();
     let circle = document.createElement('div');
     circle.className = 'rightCircle';
-    circle.style.borderRadius = '70%';
-    circle.style.width = '50px';
-    circle.style.height = '50px';
+    circle.style.width = '100px';
+    circle.style.height = '150px';
+    circle.style.backgroundImage = "url('../img/player2.png')";
+    circle.style.backgroundSize = 'cover';
     circle.style.position = 'absolute';
-    circle.style.left = div.offsetLeft + parseInt(div.offsetWidth) - 50 + 'px';
+    circle.style.left = div.offsetLeft + parseInt(div.offsetWidth) - parseInt(circle.style.width) + 'px';///built-in function
     circle.style.top = div.offsetTop - parseInt(circle.style.height) + 'px';;
     if (player2_score >= totalNumber-1){
         console.log('end');
-        circle.style.width = '100px';
-        circle.style.height = '100px';
-        circle.style.left = circle.style.left = div.offsetLeft + parseInt(div.offsetWidth)/2 - 50 + 'px';
+        circle.style.width = '150px';
+        circle.style.height = '200px';
+        circle.style.backgroundImage = "url('../img/player2Win.png')";
+        circle.style.left = circle.style.left = div.offsetLeft + parseInt(div.offsetWidth)/2 - parseInt(circle.style.width)/2 + 'px';
         circle.style.top = div.offsetTop - parseInt(circle.style.height) + 'px';;
     }
-    circle.style.backgroundColor = 'black';
     document.getElementById('game-content').appendChild(circle);
 }
 
-function get_circle_loc(score){
+function get_circle_loc(score){///Named Functions
     let number = totalNumber - score;
     switch(number){
         case (1):
@@ -209,7 +210,7 @@ function get_circle_loc(score){
         case (7):
             return 'seventh'
         case (8):
-            return 'eigth'
+            return 'eigth'///Return Statement:
     }
 }
 
@@ -249,6 +250,8 @@ function dualGame(){
         keyEventController = true;
     }
     let parent = document.getElementById('explanation');
+    parent.style.marginTop = '15px';
+    parent.style.marginBottom = '30px';
     while (parent.hasChildNodes()) {
         parent.removeChild(parent.firstChild);
     }
@@ -275,7 +278,7 @@ function dualGame(){
     document.getElementsByClassName('playgame')[0].style.display = 'block';
 }
 
-function playGame(){
+function playGame(){///Named Functions
     if (player1_score < totalNumber-1 && player2_score < totalNumber-1){
         show_picks();
         rock_paper_scissors();
@@ -285,12 +288,12 @@ function playGame(){
     }
 }
 
-function show_picks(){
+function show_picks(){///Named Functions
     player1_pick_show(select_pick_img(player1_pick));
     player2_pick_show(select_pick_img(player2_pick));
 }
 
-function player1_pick_show(url){
+function player1_pick_show(url){///Named Functions
     if (document.getElementById('player1PickImg') != null){
         document.getElementById('player1PickImg').remove();
     }
@@ -324,7 +327,7 @@ function player2_pick_show(url){
     document.getElementById('game-content').appendChild(player2_img);
 }
 
-function select_pick_img(player_picks){
+function select_pick_img(player_picks){///Named Functions
     if (player_picks == 'rock'){
         return "url(../img/rock.png)"
     }
@@ -335,11 +338,11 @@ function select_pick_img(player_picks){
         return "url(../img/scissors.png)"
     }
     else {
-        return "url(../img/no.png)"
+        return "url(../img/no.png)"///Return Statement:
     }
 }
 
-function rock_paper_scissors(){
+function rock_paper_scissors(){///Named Functions
     player1_score = parseInt(document.getElementById('player1').textContent);
     player2_score = parseInt(document.getElementById('player2').textContent);
     
@@ -400,7 +403,7 @@ function rock_paper_scissors(){
     }
 }
    
-function replace_Circle(){
+function replace_Circle(){///Named Functions
     document.getElementsByClassName('leftCircle')[0].remove();
     document.getElementsByClassName('rightCircle')[0].remove();
     getLeftCircle();

@@ -67,5 +67,7 @@ select {
 }
 
 .layer{
-    background-image: url('../img/layer.png');
+    background-color: #778beb;
+    border-top-left-radius: 10%;
+    border-top-right-radius: 10%;
 }

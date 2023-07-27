@@ -1,8 +1,13 @@
-var loginInfo = [{email : 'rriki@gmail.com', password : '1234'},
-                 {email : 'alice@gmail.com', password : '2345'},
-                 {email : 'soobeom@gmail.com', password : '3456'}]
+function User(email,password){
+    this.email = email;
+    this.password = password;
+}///Constructor
 
-document.getElementById('login-btn').addEventListener('click',function(e){
+var loginInfo = [rriki = new User('rriki@gmail.com','1234'),
+                 alice = new User ('alice@gmail.com','2345'),
+                 soobeom = new User('soobeom@gmail.com','3456')]
+
+document.getElementById('login-btn').addEventListener('click',function(e){///Input-Output
     var emailInput = document.getElementById('exampleInputEmail1').value;
     var passwordInput = document.getElementById('exampleInputPassword1').value;
     if(emailInput == ''){
@@ -17,6 +22,7 @@ document.getElementById('login-btn').addEventListener('click',function(e){
     } 
     else {
         let loginIndex = loginInfo.findIndex(e => e.email == emailInput)
+        console.log(loginIndex);
         if (loginIndex >= 0){
             if (loginInfo[loginIndex].password == passwordInput){
                 location.href = 'miniGames.html'
