@@ -80,7 +80,7 @@ nextBtn.addEventListener('click', () => {
 
         // Reset alphabets
         while (letterBtns.firstChild) { ///While Loop
-            letterBtns.removeChild(letterBtns.firstChild); ///Built-in Functions?
+            letterBtns.removeChild(letterBtns.firstChild);
         }
         placeAlphabets();
     }
@@ -128,7 +128,7 @@ function placeAlphabets() { ///Named Functions
         letterButton.innerHTML = alphabets[i];
 
         // Set onlick property
-        letterButton.onclick = clickAlphabet; ///Built-in Methods?
+        letterButton.onclick = clickAlphabet; 
 
         letterBtns.appendChild(letterButton);
     }
@@ -140,7 +140,7 @@ function clickAlphabet() {
 
     let isCorrect = false;
     for (let i = 0; i < answerText.length; i++) { ///String Manipulation
-        if (answerText[i].toLowerCase() == this.innerHTML) {
+        if (answerText[i].toLowerCase() == this.innerHTML) { ///Built-in Methods
             guessedText = guessedText.slice(0, i) + answerText[i] + guessedText.slice(i + 1);
             console.log(guessedText);
             answerSec.innerHTML = guessedText;
