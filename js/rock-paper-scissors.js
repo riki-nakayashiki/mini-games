@@ -101,7 +101,7 @@ function singleGame() {
     //Making exmplanation.
     let parent = document.getElementById('explanation');
     parent.style.marginTop = '15px';
-    parent.style.marginBottom = '20px';
+    parent.style.marginBottom = '150px';
     while (parent.hasChildNodes()) {
         parent.removeChild(parent.firstChild);
     }
@@ -152,42 +152,43 @@ function getLeftCircle(){
     let div = document.querySelector('#'+layer);
     let circle = document.createElement('div');
     circle.className = 'leftCircle';
-    circle.style.borderRadius = '70%';
-    circle.style.width = '50px';
-    circle.style.height = '50px';
+    circle.style.width = '100px';
+    circle.style.height = '150px';
+    circle.style.backgroundImage = "url('../img/player1.png')";
+    circle.style.backgroundSize = 'cover'
     circle.style.position = 'absolute';
     circle.style.left = div.offsetLeft + 10 + 'px';
     circle.style.top = div.offsetTop - parseInt(circle.style.height) + 'px';
     if (player1_score >= totalNumber-1){
-        circle.style.width = '100px';
-        circle.style.height = '100px';
-        circle.style.left = circle.style.left = div.offsetLeft + parseInt(div.offsetWidth)/2 - 50 + 'px';
-        circle.style.top = div.offsetTop - parseInt(circle.style.height) + 'px';;
+        circle.style.width = '150px';
+        circle.style.height = '200px';
+        circle.style.backgroundImage = "url('../img/player1Win.png')";
+        circle.style.left = circle.style.left = div.offsetLeft + parseInt(div.offsetWidth)/2 - parseInt(circle.style.width)/2 + 'px';
+        circle.style.top = div.offsetTop - parseInt(circle.style.height) -10 + 'px';;
     }
-    circle.style.backgroundColor = 'black';
     document.getElementById('game-content').appendChild(circle);
 }
 
 function getRightCircle(){
     let layer = get_circle_loc(player2_score);
     let div = document.querySelector('#'+layer);
-    let location = div.getBoundingClientRect();
     let circle = document.createElement('div');
     circle.className = 'rightCircle';
-    circle.style.borderRadius = '70%';
-    circle.style.width = '50px';
-    circle.style.height = '50px';
+    circle.style.width = '100px';
+    circle.style.height = '150px';
+    circle.style.backgroundImage = "url('../img/player2.png')";
+    circle.style.backgroundSize = 'cover';
     circle.style.position = 'absolute';
-    circle.style.left = div.offsetLeft + parseInt(div.offsetWidth) - 50 + 'px';
+    circle.style.left = div.offsetLeft + parseInt(div.offsetWidth) - parseInt(circle.style.width) + 'px';
     circle.style.top = div.offsetTop - parseInt(circle.style.height) + 'px';;
     if (player2_score >= totalNumber-1){
         console.log('end');
-        circle.style.width = '100px';
-        circle.style.height = '100px';
-        circle.style.left = circle.style.left = div.offsetLeft + parseInt(div.offsetWidth)/2 - 50 + 'px';
+        circle.style.width = '150px';
+        circle.style.height = '200px';
+        circle.style.backgroundImage = "url('../img/player2Win.png')";
+        circle.style.left = circle.style.left = div.offsetLeft + parseInt(div.offsetWidth)/2 - parseInt(circle.style.width)/2 + 'px';
         circle.style.top = div.offsetTop - parseInt(circle.style.height) + 'px';;
     }
-    circle.style.backgroundColor = 'black';
     document.getElementById('game-content').appendChild(circle);
 }
 
@@ -249,6 +250,8 @@ function dualGame(){
         keyEventController = true;
     }
     let parent = document.getElementById('explanation');
+    parent.style.marginTop = '15px';
+    parent.style.marginBottom = '30px';
     while (parent.hasChildNodes()) {
         parent.removeChild(parent.firstChild);
     }
