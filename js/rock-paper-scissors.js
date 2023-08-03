@@ -1,6 +1,5 @@
 var player1_score = 0; 
 var player2_score = 0;
-var keyEventController = false;
 var totalNumber;
 var player1_pick;
 var player2_pick;
@@ -34,6 +33,9 @@ function initGame(){///Named Functions
     //Set the circle on the bottom layer
     getLeftCircle();
     getRightCircle();
+
+    //reset the keyEvent
+    document.addEventListener('keydown', (event) => {});
 
 }
 
@@ -214,41 +216,38 @@ function get_circle_loc(score){///Named Functions
     }
 }
 
-function dualGame(){          
-    if (keyEventController == false){
-        document.addEventListener('keydown', (event) => {
-            switch(event.code){
-                case ("KeyA"):
-                    player1_pick = "rock";
-                    player1_pick_show("url('../img/okay.png')");
-                    break;
-                case ('KeyS'):
-                    player1_pick = "paper";
-                    player1_pick_show("url('../img/okay.png')");
-                    break;
-                case('KeyD'):
-                    player1_pick = "scissors";
-                    player1_pick_show("url('../img/okay.png')");
-                    break;
-                case ('KeyJ'):
-                    player2_pick = "rock";
-                    player2_pick_show("url('../img/okay.png')");
-                    break;
-                case ('KeyK'):
-                    player2_pick = "paper";
-                    player2_pick_show("url('../img/okay.png')");
-                    break;
-                case('KeyL'):
-                    player2_pick = "scissors";
-                    player2_pick_show("url('../img/okay.png')");
-                    break;
-                case('Enter'):
-                    playGame();
-                    break;
-            }
-        });
-        keyEventController = true;
-    }
+function dualGame(){           
+    document.addEventListener('keydown', (event) => {
+        switch(event.code){
+            case ("KeyA"):
+                player1_pick = "rock";
+                player1_pick_show("url('../img/okay.png')");
+                break;
+            case ('KeyS'):
+                player1_pick = "paper";
+                player1_pick_show("url('../img/okay.png')");
+                break;
+            case('KeyD'):
+                player1_pick = "scissors";
+                player1_pick_show("url('../img/okay.png')");
+                break;
+            case ('KeyJ'):
+                player2_pick = "rock";
+                player2_pick_show("url('../img/okay.png')");
+                break;
+            case ('KeyK'):
+                player2_pick = "paper";
+                player2_pick_show("url('../img/okay.png')");
+                break;
+            case('KeyL'):
+                player2_pick = "scissors";
+                player2_pick_show("url('../img/okay.png')");
+                break;
+            case('Enter'):
+                playGame();
+                break;
+        }
+    });
     let parent = document.getElementById('explanation');
     parent.style.marginTop = '15px';
     parent.style.marginBottom = '30px';
